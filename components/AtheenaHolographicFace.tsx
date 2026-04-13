@@ -58,9 +58,9 @@ export default function AtheenaHolographicFace({ onBegin }: Props) {
   }, []);
 
   useEffect(() => {
-    const el = rootRef.current;
-    if (!el) return;
     function onMove(e: MouseEvent) {
+      const el = rootRef.current;
+      if (!el) return;
       const rect = el.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
       const cy = rect.top + rect.height / 2;
