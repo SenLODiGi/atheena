@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import styles from "./HolographicPanels.module.css";
 
 export default function HolographicPanels() {
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -36,12 +37,12 @@ export default function HolographicPanels() {
 
   return (
     <div ref={rootRef} className="relative z-10 ml-6 flex w-full max-w-xl flex-col gap-6 px-2 md:ml-10 md:pl-8">
-      <div className="panel glass-panel absolute left-6 top-6 hidden w-44 rounded-lg border border-teal-400/20 p-3 text-xs text-teal-200 md:block">
+      <div className={`panel ${styles.glassPanel} absolute left-6 top-6 hidden w-44 rounded-lg border border-teal-400/20 p-3 text-xs text-teal-200 md:block`}>  
         <div className="font-tech text-xs text-teal-300">TIME</div>
         <div className="mt-2 font-mono text-lg text-white">{time.toLocaleTimeString()}</div>
       </div>
 
-      <div className="panel glass-panel absolute right-6 top-6 hidden w-56 rounded-lg border border-sky-400/20 p-3 text-xs text-teal-200 md:block">
+      <div className={`panel ${styles.glassPanel} absolute right-6 top-6 hidden w-56 rounded-lg border border-sky-400/20 p-3 text-xs text-teal-200 md:block`}>  
         <div className="font-tech text-xs text-teal-300">WEATHER</div>
         <div className="mt-2 text-white">
           <div className="text-sm">Colombo</div>
@@ -53,14 +54,14 @@ export default function HolographicPanels() {
         </div>
       </div>
 
-      <div className="panel glass-panel bottom-left absolute left-6 bottom-6 hidden w-[34rem] rounded-lg border border-sky-400/16 p-3 text-xs text-teal-200 md:block">
+      <div className={`panel ${styles.glassPanel} bottom-left absolute left-6 bottom-6 hidden w-[34rem] rounded-lg border border-sky-400/16 p-3 text-xs text-teal-200 md:block`}>  
         <div className="flex items-center justify-between">
           <div className="font-tech text-xs text-teal-300">NEWS</div>
           <div className="text-[11px] text-sky-200">Latest</div>
         </div>
 
         <div className="mt-2 flex gap-3 overflow-hidden">
-          <div className="ticker flex animate-marquee whitespace-nowrap gap-6 text-sm text-white">
+          <div className={`ticker flex ${styles.animateMarquee} whitespace-nowrap gap-6 text-sm text-white`}>  
             <span>World leaders convene at the summit — placeholder headline A.</span>
             <span>Breakthrough in sustainable energy tech — placeholder headline B.</span>
             <span>Local markets steady as trading opens — placeholder headline C.</span>
@@ -68,10 +69,10 @@ export default function HolographicPanels() {
         </div>
       </div>
 
-      <div className="panel glass-panel bottom-right absolute right-6 bottom-6 hidden w-44 rounded-lg border border-teal-400/18 p-3 text-xs text-teal-200 md:block">
+      <div className={`panel ${styles.glassPanel} bottom-right absolute right-6 bottom-6 hidden w-44 rounded-lg border border-teal-400/18 p-3 text-xs text-teal-200 md:block`}>  
         <div className="font-tech text-xs text-teal-300">MARKETS</div>
         <div className="mt-2 space-y-1 text-white">
-          <div className="flex items-center justify-between text-sm">
+          <div className="flex items-center justify-between text-sm">  
             <span className="text-sky-200">BTC</span>
             <span>{btc.toLocaleString()}</span>
           </div>
@@ -81,17 +82,6 @@ export default function HolographicPanels() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .glass-panel {
-          backdrop-filter: blur(8px) saturate(120%);
-          background: linear-gradient(135deg, rgba(10, 16, 30, 0.35), rgba(4, 8, 20, 0.25));
-          box-shadow: 0 8px 30px rgba(4, 12, 24, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.02);
-          border-radius: 10px;
-        }
-        .animate-marquee { animation: marquee 14s linear infinite; }
-        @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-40%); } }
-      `}</style>
     </div>
   );
 }
