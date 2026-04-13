@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-marble: #0b0f1e;
+  --bg-marble-soft: #131a2f;
+  --gold: #f8c437;
+  --gold-soft: #e9ad1c;
+  --ethereal: #7df9ff;
+  --nebula: #8c6dff;
+}
+
+* {
+  border-color: rgba(248, 196, 55, 0.14);
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--bg-marble);
+  color: #f7f7fa;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display), serif;
+}
+
+.font-body {
+  font-family: var(--font-body), serif;
+}
+
+.font-tech {
+  font-family: var(--font-tech), sans-serif;
+}
+
+.gold-filigree {
+  position: relative;
+}
+
+.gold-filigree::before,
+.gold-filigree::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.gold-filigree::before {
+  border: 1px solid rgba(248, 196, 55, 0.55);
+  opacity: 0.75;
+}
+
+.gold-filigree::after {
+  inset: 6px;
+  border: 1px solid rgba(248, 196, 55, 0.22);
+}
+
+.scroll-panel {
+  background: linear-gradient(
+      155deg,
+      rgba(248, 196, 55, 0.08),
+      rgba(255, 255, 255, 0.02)
+    ),
+    linear-gradient(180deg, rgba(10, 15, 30, 0.72), rgba(22, 31, 56, 0.9));
+  border: 1px solid rgba(248, 196, 55, 0.4);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35), inset 0 0 25px rgba(248, 196, 55, 0.07);
+}
+
+.greek-key-border {
+  border: 1px solid rgba(248, 196, 55, 0.6);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 6px,
+    rgba(248, 196, 55, 0.16) 6px,
+    rgba(248, 196, 55, 0.16) 12px
+  );
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+}
+
+.lk-control-bar {
+  background: transparent !important;
+}
+
+.lk-button {
+  border-radius: 9999px !important;
+}
