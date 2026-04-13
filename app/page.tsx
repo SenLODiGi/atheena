@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import gsap from "gsap";
-import { AtheenaHolographicFace } from "@/components/AtheenaHolographicFace";
+import AtheenaHolographicFace from "@/components/AtheenaHolographicFace";
 import HolographicPanels from "@/components/HolographicPanels";
 
 const CallView = dynamic(() => import("@/components/CallView").then((m) => (m.CallView ? m.CallView : m.default)), {
