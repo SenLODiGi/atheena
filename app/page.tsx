@@ -6,7 +6,7 @@ import gsap from "gsap";
 import AtheenaHolographicFace from "@/components/AtheenaHolographicFace";
 import HolographicPanels from "@/components/HolographicPanels";
 
-const CallView = dynamic(() => import("@/components/CallView").then((m) => (m.CallView ? m.CallView : m.default)), {
+const CallView = dynamic(() => import("@/components/CallView").then((m) => m.CallView), {
   ssr: false,
 });
 
