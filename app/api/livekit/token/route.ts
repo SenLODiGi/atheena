@@ -8,9 +8,11 @@ type TokenRequest = {
 
 export async function POST(request: Request) {
   try {
+    // Prefer server-side secret vars set by Vercel/LiveKit dashboard
     const apiKey = process.env.LIVEKIT_API_KEY;
     const apiSecret = process.env.LIVEKIT_API_SECRET;
-    const wsUrl = process.env.NEXT_PUBLIC_LIVEKIT_URL;
+    // Websocket URL may be provided as LIVEKIT_URL (server) or NEXT_PUBLIC_LIVEKIT_URL (public)
+    const wsUrl = process.env.LIVEKIT_URL ?? process.env.NEXT_PUBLIC_LIVEKIT_URL;
 
     if (!apiKey || !apiSecret || !wsUrl) {
       return NextResponse.json(
