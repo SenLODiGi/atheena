@@ -192,7 +192,7 @@ export default function AtheenaHolographicFace({ onBegin }: Props) {
         </button>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .glass { background: linear-gradient(135deg, rgba(6,11,20,0.45), rgba(3,6,12,0.25)); border: 1px solid rgba(56,189,248,0.06); }
       `}</style>
     </div>
